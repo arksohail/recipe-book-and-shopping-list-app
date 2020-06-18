@@ -10,6 +10,7 @@ export class RecipeService {
 
   recipes: Recipe[] = [
     new Recipe({
+      id: 1,
       name: 'Big Fat Hamburger',
       description: 'Fresh, ground, 100% pure lean beef Hamburger.',
       imagePath: 'https://images7.alphacoders.com/103/1033300.jpg',
@@ -23,6 +24,7 @@ export class RecipeService {
       ]
     }),
     new Recipe({
+      id: 2,
       name: 'Bombay Sandwich',
       description: 'Indian Style Club Sandwich',
       imagePath: 'https://b.zmtcdn.com/data/pictures/chains/0/19080920/147ff6d880f34516d9d6ae70824c5ae3.jpg',
@@ -44,6 +46,8 @@ export class RecipeService {
   }
 
   getRecipes = () => this.recipes.slice();
+
+  getRecipe = (id: number): Recipe => this.recipes.find(recipe => recipe.id === id)
 
   addToShoppingList = (ingredients: Ingredient[]) => this.shoppingService.onIngredientsAdded(ingredients)
 }

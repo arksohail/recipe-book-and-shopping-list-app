@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 
 export enum Feature {
   Recipe = 'recipe',
@@ -11,7 +11,4 @@ export enum Feature {
 })
 export class HeaderComponent {
   collapsed: boolean = false;
-  @Output() featureSelected = new EventEmitter<Feature>();
-  Feature = Feature;
-  onSelect = (feature: Feature) => this.featureSelected.emit(feature);
 }
